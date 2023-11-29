@@ -18,6 +18,7 @@ const commentRouter = require("./src/routes/commentRoute");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use('/uploads', express.static('../uploads'));
 
 //Utilisation des Routes
 app.use("/api/post", postRouter);

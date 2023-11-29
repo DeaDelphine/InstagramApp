@@ -10,7 +10,8 @@ const allPosts = async (req, res) => {
 };
 
 const newPost = async (req, res) => {
-    const { title, legend, image, commentId } = req.body;
+    const { title, legend, commentId } = req.body;
+    const image = req.file.filename;
     try {
         const post = await Post.create({ title, legend, image });
         post.commentId = commentId ? commentId.split(",") : []; 
